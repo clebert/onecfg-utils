@@ -1,0 +1,40 @@
+{
+  "name": "@onecfg/utils",
+  "version": "0.0.0",
+  "description": "Useful utilities for generating config files with onecfg.",
+  "license": "MIT",
+  "author": "Clemens Akens",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/esm/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "ci": "run-p compile format:check lint test",
+    "compile": "onecmd compile",
+    "format": "onecmd format",
+    "format:check": "onecmd format --check",
+    "lint": "onecmd lint",
+    "prepare": "run-s setup",
+    "release": "npm version",
+    "postrelease": "git push --follow-tags",
+    "setup": "onecmd setup",
+    "test": "onecmd test"
+  },
+  "dependencies": {
+    "deepmerge": "^4.2.2",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@onecmd/standard-plugins": "^0.18.0",
+    "@types/js-yaml": "^4.0.5",
+    "npm-run-all": "^4.1.5"
+  },
+  "peerDependencies": {
+    "@onecfg/core": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
