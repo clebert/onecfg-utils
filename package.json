@@ -1,6 +1,6 @@
 {
   "name": "@onecfg/utils",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Useful utilities for generating config files with onecfg.",
   "license": "MIT",
   "author": "Clemens Akens",
