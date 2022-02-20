@@ -14,10 +14,12 @@ export function mergeContent<TContent extends object>(
   content: TContent,
   options: MergeContentOptions = {},
 ): FileChange<TContent> {
+  const {path, predicate} = fileDeclaration;
   const {replaceArrays, ...fileChangeOptions} = options;
 
   return {
-    ...fileDeclaration,
+    path,
+    predicate,
     options: fileChangeOptions,
     replacer: (previousContent) =>
       deepmerge(previousContent, content, {

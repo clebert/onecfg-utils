@@ -9,5 +9,7 @@ export function replaceContent<TContent>(
   content: TContent,
   options: FileChangeOptions = {},
 ): FileChange<TContent> {
-  return {...fileDeclaration, options, replacer: () => content};
+  const {path, predicate} = fileDeclaration;
+
+  return {path, predicate, options, replacer: () => content};
 }
